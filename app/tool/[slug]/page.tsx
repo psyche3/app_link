@@ -80,7 +80,7 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
         <p className="text-xs text-gray-500 dark:text-gray-500 leading-snug">{tool.description}</p>
       </div>
       <div className="pt-12">
-        <ToolComponent />
+      <ToolComponent />
       </div>
     </div>
   )
