@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
-import { Copy, Check, Download, AlertCircle, Minus2, Maximize2, Trash2, Upload, ChevronDown, ChevronUp, FileText, Network } from 'lucide-react'
+import { Copy, Check, Download, AlertCircle, Maximize2, Trash2, Upload, ChevronDown, ChevronUp, FileText, Network } from 'lucide-react'
 import JsonTreeView from '@/components/ui/JsonTreeView'
 import { cn } from '@/lib/utils'
 import { formatJSON, minifyJSON, validateJSON } from '@/lib/formatJSON'

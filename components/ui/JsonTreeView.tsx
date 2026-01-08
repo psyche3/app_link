@@ -83,7 +83,7 @@ export default function JsonTreeView({ data, level = 0, autoExpand = false }: Js
     }
 
     if (typeof value === 'string') {
-      return <span className="text-green-600 dark:text-green-400">"{value}"</span>
+      return <span className="text-green-600 dark:text-green-400">&ldquo;{value}&rdquo;</span>
     }
 
     if (Array.isArray(value)) {
@@ -135,7 +135,7 @@ export default function JsonTreeView({ data, level = 0, autoExpand = false }: Js
             <div className={cn('ml-6 mt-1 border-l-2 border-gray-200 dark:border-gray-700 pl-4', level > 0 && 'ml-4')}>
               {keys.map((k) => (
                 <div key={k} className="my-1">
-                  <span className="text-blue-600 dark:text-blue-400 font-medium">"{k}": </span>
+                  <span className="text-blue-600 dark:text-blue-400 font-medium">&ldquo;{k}&rdquo;: </span>
                   {renderValue(value[k], parentKey ? `${parentKey}-${k}` : k, key)}
                 </div>
               ))}
