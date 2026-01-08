@@ -21,8 +21,8 @@ export default function PasswordList({ onEdit }: PasswordListProps) {
     return (
       <div className="text-center py-12">
         <p className="text-gray-500 dark:text-gray-400">还没有保存任何密码</p>
-          <p className="text-sm text-gray-400 dark:text-gray-500 mt-2">
-          点击&ldquo;添加密码&rdquo;按钮开始添加
+        <p className="text-sm text-gray-400 dark:text-gray-500 mt-2">
+          点击"添加密码"按钮开始添加
         </p>
       </div>
     )

@@ -39,9 +39,8 @@ export default function HistoryPage() {
   }, [history])
 
   // 按日期分组
-  type HistoryItem = { toolSlug: string; timestamp: string; tool: Tool }
   const groupedByDate = useMemo(() => {
-    const groups: Record<string, HistoryItem[]> = {}
+    const groups: Record<string, typeof historyWithTools> = {}
     
     historyWithTools.forEach((item) => {
       const date = new Date(item.timestamp)
@@ -171,7 +170,7 @@ export default function HistoryPage() {
         viewMode === 'grid' ? (
           // 图库格式 - 按日期分组
           <div className="space-y-8">
-            {groupedByDate.map(([dateKey, items]) => (
+            {Object.entries(groupedByDate).map(([dateKey, items]) => (
               <div key={dateKey} className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Calendar className="w-5 h-5 text-primary" />
@@ -235,7 +234,7 @@ export default function HistoryPage() {
           // 日历格式
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
             <div className="p-6 space-y-6">
-              {groupedByDate.map(([dateKey, items]) => (
+              {Object.entries(groupedByDate).map(([dateKey, items]) => (
                 <div key={dateKey} className="border-b border-gray-200 dark:border-gray-700 last:border-b-0 pb-6 last:pb-0">
                   <div className="flex items-center gap-3 mb-4">
                     <Calendar className="w-5 h-5 text-primary" />
